@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 	printf("Welcome to MACdonalds flood (+.+) <Program by cyan55>\n\n----------------------------------------------\n\n");
 
 	if(argc < 5)
-		exp_error("Usage:\n\n<device> <interval> <three_octet_prefix> <broadcast_option>\n\n<device>: The device you would like to use for this attack\n<interval>: An interval in seconds to sleep for between packet injection or -1 for a continuous loop\n<ip_prefix>: A three octet prefix if your will use the ARP protocol with this attack, -1 if you want to send an ethernet packet without an upper layer protocol, -2 if you want to use broadcast addresses\n\n", EXP_EXIT_ERROR);
+		exp_error("Usage:\n\n<device> <interval> <three_octet_prefix> <broadcast_option>\n\n<device>: The device you would like to use for this attack\n<interval>: An interval in seconds to sleep for between packet injection or -1 for a continuous loop\n<ip_prefix>: A three octet prefix if your will use the ARP protocol with this attack, set to 0 if you are not using option 2*\n<broadcast_option>: Broadcast option allows you to set options relating to the destination/source MAC and IP addresses\n0 = Broadcast destinations only (send packets to broadcast addresses)\n1 = Generate random MAC addresses for the source and destination including random IP addresses based on the prefix\n2 = Include no upper layer protocol, in such case sends an ETH packet with the upper layer protocol set to 0n\n", EXP_EXIT_ERROR);
 
 	int interval = atoi(argv[2]);
 
