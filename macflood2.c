@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 	time_t tme;
 	srand((unsigned int)time(&tme));
 
-	printf("Welcome to MAC flood (+.+) <Program by cyan55>\n\n----------------------------------------------\n\n");
+	printf("Welcome to MAC flood (+.+) <Program by Oscar Tark>\n\n----------------------------------------------\n\n");
 
 	if(argc < 3)
 		exp_error("Usage:\n\n<device> <interval OR -1> <VENDOR 3 OCTET ex. 00:00:00>", EXP_EXIT_ERROR);
@@ -43,12 +43,6 @@ int main(int argc, char* argv[])
 	struct exp_mac_addr mac_dst;
 	struct exp_mac_addr mac_src;
 
-	char src_ip_c[32];
-	char dst_ip_c[32];
-
-	u_int32_t src_ip;
-	u_int32_t dst_ip;
-
 	int n = 1;
 	unsigned int protocol = 0x0000;
 
@@ -68,7 +62,7 @@ int main(int argc, char* argv[])
 
 		if(interval != -1)
 			sleep(interval);
-		printf("[%d][OK] %s--->%s (%s--->%s)\n", n, mac_src.mac_string, mac_dst.mac_string, src_ip_c, dst_ip_c);
+		printf("[%d][OK] %s ---> %s\n", n, mac_src.mac_string, mac_dst.mac_string);
 		libnet_clear_packet(lnet);
 		n++;
 	}
